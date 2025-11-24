@@ -1,18 +1,18 @@
 package com.example.springPractice;
 
-
-import com.example.springPractice.lifecyclephase.BeanB;
+//import com.example.springPractice.lifecyclephase.BeanB;
 //import com.example.springPractice.scopedemo.Car;
 //import com.example.springPractice.lifecycle.Applifeclye;
 import com.example.springPractice.OrderLab.OrderController;
+import com.example.springPractice.aopdemo.userService;
 import com.example.springPractice.profiledemo.DatabaseConfig;
 import com.example.springPractice.scanLab.beta;
 import com.example.springPractice.scanLab.gamma;
 import com.example.springPractice.scandemo.Tata;
 import com.example.springPractice.scandemo.Tataengine;
 import com.example.springPractice.speldemo.Expressiondemo;
-import com.example.springPractice.stereotype.Payment;
-import com.example.springPractice.stereotype.UserController;
+//import com.example.springPractice.stereotype.Payment;
+//import com.example.springPractice.stereotype.UserController;
 import com.example.springPractice.valuedemo.AppInfo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,16 +22,16 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
 
 import org.springframework.stereotype.Component;
-
+//
 @SpringBootApplication
-@ComponentScan(
-		basePackages="com.example.springPractice.scanLab",
-		excludeFilters = @ComponentScan.Filter(
-				type = FilterType.ASSIGNABLE_TYPE,
-				classes = com.example.springPractice.scanLab.gamma.class
-		)
-
-)
+//@ComponentScan(
+//		basePackages="com.example.springPractice.scanLab",
+//		excludeFilters = @ComponentScan.Filter(
+//				type = FilterType.ASSIGNABLE_TYPE,
+//				classes = com.example.springPractice.scanLab.gamma.class
+//		)
+//
+//)
 public class SpringPracticeApplication {
 	public static void main(String[] args) {
 //		ApplicationContext context = SpringApplication.run(SpringPracticeApplication.class, args);
@@ -102,8 +102,11 @@ public class SpringPracticeApplication {
 //		gamma.hi();
 
 		//lifecyclephase
-		ApplicationContext context = SpringApplication.run(SpringPracticeApplication.class, args);
-		BeanB b = context.getBean(BeanB.class);
+		ApplicationContext context = SpringApplication.run(SpringPracticeApplication.class);
+		userService b = context.getBean(userService.class);
+		b.register();
+		b.login();
+		b.getuser();
 		System.out.println("App running");
 	}
 
