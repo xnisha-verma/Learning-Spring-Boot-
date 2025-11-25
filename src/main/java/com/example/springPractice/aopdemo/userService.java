@@ -10,6 +10,7 @@ public class userService {
     }
     public void login(){
         System.out.println("user logged in");
+//        throw new RuntimeException("error login");
     }
     public String getuser(){
         System.out.println("getting user");
